@@ -23,6 +23,8 @@ class Settings(models.Model):
     
 class Record(models.Model):
     user = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    username = models.CharField(max_length= 30, null = True)
+    email = models.EmailField(null = True)
     timestamp = models.DateTimeField(auto_now_add = True)
     activity = CharField(max_length=30, choices=[('check in', 'check in'), ('check out', 'check out')])
 
