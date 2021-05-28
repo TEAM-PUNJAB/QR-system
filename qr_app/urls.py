@@ -1,9 +1,10 @@
 from django.urls import path
-from .views import login, dashboard, logout, set_ip, scan_page, check_in, check_out, download_csv
+from .views import login, dashboard, index, logout, set_ip, scan_page, check_in, check_out, download_csv
 
 urlpatterns = [
-    path('', login, name="login"),
+    path('login/', login, name="login"),
     path('dashboard/', dashboard, name="dash"),
+    path('', index, name="index"),
     path('logout/', logout, name="logout"),
     path('set_ip/', set_ip, name="set_ip"),
     path('scan_page/<slug:id>/', scan_page, name="scan_page"),
